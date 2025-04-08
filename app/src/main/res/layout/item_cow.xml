@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:background="@android:drawable/list_selector_background">
+
+    <!-- Health Status Indicator -->
+    <ImageView
+        android:id="@+id/healthIndicator"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/green_dot"/>
+
+    <!-- Cow ID -->
+    <TextView
+        android:id="@+id/cowId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="COW001"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <!-- Digital Twin Status -->
+    <TextView
+        android:id="@+id/digitalTwinStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:text="Normal"
+        android:textSize="14sp"/>
+</LinearLayout>

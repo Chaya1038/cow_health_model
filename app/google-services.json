@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "303512032317",
+    "project_id": "herdhealth-b827d",
+    "storage_bucket": "herdhealth-b827d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303512032317:android:19775eaa740d5158e34654",
+        "android_client_info": {
+          "package_name": "com.aadhya.herdhealth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgpKK-Tw3MFWekkvg8f6q3xJsWZqutaxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

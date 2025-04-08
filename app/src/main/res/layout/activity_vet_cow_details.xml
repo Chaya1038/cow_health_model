@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvCowId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cow ID:"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvCowName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cow Name:"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvCowStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status:"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvLameness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lameness:"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvEstrus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estrus:"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvDigitalTwin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Digital Twin Insights:"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvFarmerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Farmer:"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvFarmerContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact:"
+        android:textSize="16sp"/>
+
+</LinearLayout>
