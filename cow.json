@@ -1,0 +1,69 @@
+{
+    "@context": "dtmi:dtdl:context;2",
+    "@id": "dtmi:com:example:Cow;1",
+    "@type": "Interface",
+    "displayName": "Cow",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "breed",
+        "schema": "string"
+      },
+      {
+        "@type": "Property",
+        "name": "rumination_time",
+        "schema": "double"
+      },
+      {
+        "@type": "Property",
+        "name": "avg_lameness",
+        "schema": "double"
+      },
+      {
+        "@type": "Property",
+        "name": "estrus_sign",
+        "schema": "string"
+      },
+      {
+        "@type": "Property",
+        "name": "ax",
+        "schema": "double"
+      },
+      {
+        "@type": "Property",
+        "name": "ay",
+        "schema": "double"
+      },
+      {
+        "@type": "Property",
+        "name": "az",
+        "schema": "double"
+      },
+      {
+        "@type": "Property",
+        "name": "gx",
+        "schema": "double"
+      },
+      {
+        "@type": "Property",
+        "name": "gy",
+        "schema": "double"
+      },
+      {
+        "@type": "Property",
+        "name": "gz",
+        "schema": "double"
+      },
+      {
+        "@type": "Property",
+        "name": "step_count",
+        "schema": "integer"
+      },
+      {
+        "@type": "Property",
+        "name": "predictionLabel",
+        "schema": "string"
+      }
+    ]
+  }
+  
