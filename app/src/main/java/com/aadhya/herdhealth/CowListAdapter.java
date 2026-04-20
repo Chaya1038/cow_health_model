@@ -32,31 +32,23 @@ public class CowListAdapter extends ArrayAdapter<Cow> {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_cow, parent, false);
         }
 
-        TextView cowId = convertView.findViewById(R.id.cowId);
-        TextView digitalTwinStatus = convertView.findViewById(R.id.digitalTwinStatus);
-        ImageView healthIndicator = convertView.findViewById(R.id.healthIndicator);
-
         Cow cow = cowList.get(position);
-        cowId.setText(cow.getId());
-        digitalTwinStatus.setText(cow.getDigitalTwinStatus());
 
-        // Set Health Status Indicator
-        if (cow.getHealthStatus().equals("Healthy")) {
-            healthIndicator.setImageResource(R.drawable.green_dot);
+        TextView cowIdTextView = convertView.findViewById(R.id.cowIdTextView);
+        TextView healthStatusTextView = convertView.findViewById(R.id.healthStatusTextView);
+        ImageView healthStatusImageView = convertView.findViewById(R.id.healthStatusImageView);
+
+        cowIdTextView.setText(cow.getId());
+        healthStatusTextView.setText(cow.getHealthStatus());
+
+        // Set health indicator
+        if (cow.getHealthStatus().equals("Urgent")) {
+            healthStatusImageView.setImageResource(R.drawable.red_dot);
         } else if (cow.getHealthStatus().equals("Warning")) {
-            healthIndicator.setImageResource(R.drawable.yellow_dot);
+            healthStatusImageView.setImageResource(R.drawable.yellow_dot);
         } else {
-            healthIndicator.setImageResource(R.drawable.red_dot);
+            healthStatusImageView.setImageResource(R.drawable.green_dot);
         }
-
-        // Set click listener to open CowDetailsActivity
-        convertView.setOnClickListener(view -> {
-            Intent intent = new Intent(context, CowDetailsActivity.class);
-            intent.putExtra("cowId", cow.getId());
-            intent.putExtra("healthStatus", cow.getHealthStatus());
-            intent.putExtra("digitalTwinStatus", cow.getDigitalTwinStatus());
-            context.startActivity(intent);
-        });
 
         return convertView;
     }

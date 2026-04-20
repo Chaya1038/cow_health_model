@@ -6,20 +6,20 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CowListActivity extends AppCompatActivity {
-
     private ListView cowListView;
-    private EditText searchBar;
-    private CowListAdapter adapter;
-    private List<Cow> cowList, filteredList;
+    // Use consistent lowercase IDs that match your API's $dtId format
+    private String[] cowIds = {"co-01", "co-02", "co-03"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,51 +27,18 @@ public class CowListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cow_list);
 
         cowListView = findViewById(R.id.cowListView);
-        searchBar = findViewById(R.id.searchBar);
-
-        // Dummy Data for Cows
-        cowList = new ArrayList<>();
-        cowList.add(new Cow("COW001", "Healthy", "Normal"));
-        cowList.add(new Cow("COW002", "Warning", "Lameness detected"));
-        cowList.add(new Cow("COW003", "Urgent", "Severe illness detected"));
-
-        filteredList = new ArrayList<>(cowList);
-
-        adapter = new CowListAdapter(this, filteredList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_list_item_1,
+                cowIds
+        );
         cowListView.setAdapter(adapter);
 
-        // Search Bar Functionality
-        searchBar.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                filterCows(s.toString());
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {}
+        cowListView.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent = new Intent(this, CowDetailsActivity.class);
+            // Pass the exact ID format your API expects
+            intent.putExtra("cow_id", cowIds[position]);
+            startActivity(intent);
         });
-
-        // Click on a cow to go to details page
-        cowListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(CowListActivity.this, CowDetailsActivity.class);
-                intent.putExtra("cow_id", filteredList.get(position).getId());
-                startActivity(intent);
-            }
-        });
-    }
-
-    private void filterCows(String query) {
-        filteredList.clear();
-        for (Cow cow : cowList) {
-            if (cow.getId().toLowerCase().contains(query.toLowerCase())) {
-                filteredList.add(cow);
-            }
-        }
-        adapter.notifyDataSetChanged();
     }
 }

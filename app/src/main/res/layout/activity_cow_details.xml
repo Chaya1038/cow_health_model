@@ -1,104 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <LinearLayout
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dataTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:lineSpacingExtra="8dp"/>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/arButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <!-- Cow ID -->
-        <TextView
-            android:id="@+id/cowIdTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cow ID: "
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <!-- Age -->
-        <TextView
-            android:id="@+id/ageTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Age: "
-            android:textSize="16sp" />
-
-        <!-- Breed -->
-        <TextView
-            android:id="@+id/breedTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Breed: "
-            android:textSize="16sp" />
-
-        <!-- Health Status -->
-        <TextView
-            android:id="@+id/healthStatusTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Health: "
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <!-- Health Indicator -->
-        <ImageView
-            android:id="@+id/healthIndicatorImage"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:contentDescription="Health Indicator"
-            android:src="@drawable/green_dot" />
-
-        <!-- Lameness Status -->
-        <TextView
-            android:id="@+id/lamenessStatusTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lameness: "
-            android:textSize="16sp" />
-
-        <!-- Estrus Status -->
-        <TextView
-            android:id="@+id/estrusStatusTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Estrus: "
-            android:textSize="16sp" />
-
-        <!-- Digital Twin Insights -->
-        <TextView
-            android:id="@+id/digitalTwinInsightsTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Digital Twin Insights: "
-            android:textSize="16sp" />
-
-        <!-- Motion Sensor Data -->
-        <TextView
-            android:id="@+id/motionTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Motion: "
-            android:textSize="16sp" />
-
-        <!-- Temperature Data -->
-        <TextView
-            android:id="@+id/temperatureTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Temperature: "
-            android:textSize="16sp" />
-
-        <!-- Heart Rate Data -->
-        <TextView
-            android:id="@+id/heartRateTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Heart Rate: "
-            android:textSize="16sp" />
-
-    </LinearLayout>
-</ScrollView>
+        android:text="View in AR"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
